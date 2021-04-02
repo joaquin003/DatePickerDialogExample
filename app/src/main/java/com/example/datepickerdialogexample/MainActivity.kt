@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         datePicker.show(supportFragmentManager, "datePicker")
     }
     fun onDateSelected(day:Int,month:Int,year:Int){
-        etDate.setText("Has seleccionado el dia $day del mes $month del $year")
+        var suma = 1
+        if(month == 12){
+            suma = -11
+        }
+        etDate.setText("Has seleccionado el dia $day del mes ${month+suma} del $year")
     }
 }
